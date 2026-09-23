@@ -1,0 +1,42 @@
+{
+  "name": "openfox-model-pricing",
+  "version": "2.0.0",
+  "description": "Comprehensive model pricing, discount badges, dynamic rates, and real-time session cost tracking plugin for OpenFox",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
+  },
+  "openfox": {
+    "apiVersion": 2,
+    "entry": "./dist/index.js",
+    "displayName": "Model Pricing & Cost Tracker",
+    "description": "Displays live model pricing, discount badges, cost tiers in the model picker, and computes real-time session token costs.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#10B981\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"23\"></line><path d=\"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
+    "capabilities": [
+      "models",
+      "settings",
+      "hooks",
+      "ui",
+      "tools",
+      "rpc"
+    ],
+    "timeoutMs": 15000
+  },
+  "peerDependencies": {
+    "openfox": ">=2.0.0 <3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  }
+}

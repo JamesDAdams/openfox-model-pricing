@@ -1,0 +1,9 @@
+{
+  "antigravity/gemini-3.7-flash": {
+    "lastUpdatedAt": "2026-09-22T21:50:02.481Z",
+    "input": 0.15,
+    "output": 0.6,
+    "cacheRead": 0.075,
+    "cacheWrite": 0.3
+  }
+}

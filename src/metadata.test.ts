@@ -144,6 +144,7 @@ describe('metadata provider', () => {
   it('uses currency-specific thresholds for color tiers (EUR and Tokens)', async () => {
     const customProvider = createModelMetadataProvider(() => ({
       ...DEFAULT_SETTINGS,
+      showPricesUnderModelNames: true,
       outputLowThresholdTokens: 1500,
       outputMedThresholdTokens: 6000,
       outputLowThresholdEur: 1.0,

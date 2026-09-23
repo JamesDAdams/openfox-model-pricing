@@ -2,7 +2,7 @@ import type { PluginSettingsSchema, PricingSettings } from './types.js'
 
 export const DEFAULT_SETTINGS: PricingSettings = {
   showPopover: true,
-  showPricesUnderModelNames: true,
+  showPricesUnderModelNames: false,
   showInputPriceInList: true,
   showOutputPriceInList: true,
   showCacheReadPriceInList: true,
@@ -10,8 +10,8 @@ export const DEFAULT_SETTINGS: PricingSettings = {
   showModelPriceInBar: true,
   showInputPriceInBar: true,
   showOutputPriceInBar: true,
-  showCacheReadPriceInBar: true,
-  showCacheWritePriceInBar: true,
+  showCacheReadPriceInBar: false,
+  showCacheWritePriceInBar: false,
   priceColorTiers: true,
   colorModelNameByOutputPrice: true,
   showDiscountBadge: true,
@@ -57,7 +57,7 @@ export const SETTINGS_SCHEMA: PluginSettingsSchema = {
         en: 'Display configured rates and discounts below model names in the selector and lists.',
         fr: 'Affiche les tarifs et remises configurés sous les noms de modèles dans le sélecteur et les listes.',
       },
-      default: true,
+      default: false,
     },
     {
       key: 'showInputPriceInList',
@@ -135,7 +135,7 @@ export const SETTINGS_SCHEMA: PluginSettingsSchema = {
         en: 'Show active model cache read rate in the bottom bar',
         fr: 'Affiche le tarif de lecture cache dans la barre inférieure',
       },
-      default: true,
+      default: false,
     },
     {
       key: 'showCacheWritePriceInBar',
@@ -146,7 +146,7 @@ export const SETTINGS_SCHEMA: PluginSettingsSchema = {
         en: 'Show active model cache write rate in the bottom bar',
         fr: 'Affiche le tarif d’écriture cache dans la barre inférieure',
       },
-      default: true,
+      default: false,
     },
     {
       key: 'priceColorTiers',

@@ -155,55 +155,7 @@ export function register(registry: PluginRegistry): void {
     })
   }
 
-  // 6. Register UI Panel for Cost Tracking
-  if (typeof registry.registerUiPanel === 'function') {
-    registry.registerUiPanel({
-      id: 'session-cost',
-      title: { en: 'Session Cost & Rates', fr: 'Coût de session et tarifs' },
-      size: 'md',
-      kind: 'declarative',
-      content: [
-        {
-          type: 'card',
-          title: { en: 'Session Token Usage & Cost', fr: 'Utilisation & Coût de session' },
-          subtitle: {
-            en: 'Estimated cost based on model input/output rates and promotional discounts.',
-            fr: 'Coût estimé basé sur les tarifs entrée/sortie et les remises promotionnelles.',
-          },
-          tone: 'info',
-          children: [
-            {
-              type: 'keyValue',
-              items: [
-                { key: { en: 'Estimated Cost', fr: 'Coût estimé' }, value: '{{totalCost}}' },
-                { key: { en: 'Prompt Tokens', fr: 'Jetons d’entrée' }, value: '{{promptTokens}}' },
-                { key: { en: 'Completion Tokens', fr: 'Jetons de sortie' }, value: '{{completionTokens}}' },
-                { key: { en: 'Total LLM Calls', fr: 'Appels LLM totaux' }, value: '{{callsCount}}' },
-              ],
-            },
-          ],
-        },
-      ],
-    })
-  }
-
-  // 7. Register UI Action to open Cost Panel
-  if (typeof registry.registerUiAction === 'function') {
-    registry.registerUiAction({
-      id: 'open-session-cost-panel',
-      slot: 'session.header.actions',
-      label: { en: 'Session Cost', fr: 'Coût de session' },
-      icon: 'star',
-      variant: 'default',
-      tooltip: { en: 'View estimated session cost and token breakdown', fr: 'Voir le coût estimé et le détail des jetons' },
-      onActivate: {
-        kind: 'openPanel',
-        panelId: 'session-cost',
-      },
-    })
-  }
-
-  // 8. Register UI Badge on session header
+  // 6. Register UI Badge on session header
   if (typeof registry.registerUiBadge === 'function') {
     registry.registerUiBadge({
       id: 'session-cost-badge',

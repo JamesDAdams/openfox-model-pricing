@@ -56,8 +56,6 @@ describe('openfox-model-pricing plugin registration', () => {
 
     expect(registered['settings']).toBeDefined()
     expect(registered['metadataProvider']).toBeDefined()
-    expect(registered['uiPanel']).toBeDefined()
-    expect(registered['uiAction']).toBeDefined()
     expect(registered['uiBadge']).toBeDefined()
     expect(registered['uiComponent']).toBeDefined()
     expect(hookHandlers['llm.completed']).toBeDefined()
